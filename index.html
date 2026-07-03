@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Jesús & Viviana — Nuestro Álbum</title>
+  <meta name="description" content="Un álbum de recuerdos para Jesús y Viviana. Cada mes, un nuevo capítulo de nuestra historia de amor.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="Jesús & Viviana — Nuestro Álbum">
+  <meta property="og:description" content="Cada mes escribimos un nuevo capítulo de nuestra historia.">
+  <meta property="og:type" content="website">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- ================================================================
+       NAVBAR (Barra de navegación)
+       ================================================================ -->
+  <header class="navbar" id="navbar">
+    <div class="navbar-container">
+      <a href="#hero" class="navbar-brand">J ❤️ V</a>
+      <nav class="navbar-menu" aria-label="Navegación principal">
+        <a href="#hero" class="navbar-link" id="nav-inicio">Inicio</a>
+        <div class="navbar-dropdown">
+          <div class="navbar-dropdown-trigger">
+            <a href="#chapters" class="navbar-link" id="nav-capitulos">Capítulos</a>
+            <button class="navbar-dropdown-toggle" id="navbar-dropdown-toggle" aria-label="Elegir año">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+                <path d="M6 9l6 6 6-6"/>
+              </svg>
+            </button>
+          </div>
+          <div class="navbar-dropdown-content" id="navbar-years-dropdown">
+            <!-- Generado dinámicamente por JS -->
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================================================================
+       HERO
+       ================================================================ -->
+  <section id="hero" aria-label="Portada del álbum">
+    <div class="hero-bg" id="hero-bg" role="img" aria-label="Foto de Jesús y Viviana"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-couple">Jesús ❤️ Viviana</p>
+      <h1 class="hero-title">Nuestro Álbum</h1>
+      <p class="hero-date">05 Julio 2025 — ∞</p>
+      <p class="hero-quote">"Cada mes escribimos un nuevo capítulo de nuestra historia."</p>
+      <button class="btn-enter" id="btn-enter" aria-label="Ir a los capítulos">
+        <span>Entrar</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
+      </button>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       CONTADOR
+       ================================================================ -->
+  <section id="counter" aria-label="Tiempo juntos">
+    <div class="fade-up">
+      <p class="counter-label-section">Tiempo juntos</p>
+      <p class="counter-subtitle">Cada día cuenta</p>
+      <div class="counter-grid" role="list">
+        <div class="counter-item" role="listitem">
+          <span class="counter-number" id="cnt-dias" aria-live="polite">0</span>
+          <span class="counter-unit">Días</span>
+        </div>
+        <div class="counter-item" role="listitem">
+          <span class="counter-number" id="cnt-meses" aria-live="polite">0</span>
+          <span class="counter-unit">Meses</span>
+        </div>
+        <div class="counter-item" role="listitem">
+          <span class="counter-number" id="cnt-anos" aria-live="polite">0</span>
+          <span class="counter-unit">Años</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       CAPÍTULOS
+       ================================================================ -->
+  <section id="chapters" aria-label="Capítulos del álbum">
+    <div class="section-header fade-up">
+      <p class="section-tag">Nuestros recuerdos</p>
+      <h2 class="section-title">Capítulos</h2>
+      <p class="section-desc">Cada mes, una carta y un puñado de momentos que guardar para siempre.</p>
+    </div>
+    <div id="chapters-container">
+      <!-- Generado dinámicamente agrupado por años -->
+    </div>
+  </section>
+
+  <!-- ================================================================
+       SECCIÓN FINAL
+       ================================================================ -->
+  <section id="final" aria-label="Mensaje final">
+    <div class="final-bg" id="final-bg" role="img" aria-label="Foto de cierre"></div>
+    <div class="final-overlay"></div>
+    <div class="final-content fade-up">
+      <p>Gracias por compartir esta historia conmigo.</p>
+      <p>Espero seguir escribiendo muchos capítulos más.</p>
+      <p class="final-firma">Con amor, Jesús ❤️</p>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       DETALLE DEL CAPÍTULO (overlay)
+       ================================================================ -->
+  <div id="chapter-detail" role="dialog" aria-modal="true" aria-label="Detalle del capítulo">
+    <div class="detail-backdrop" id="detail-backdrop"></div>
+    <div class="detail-panel" id="detail-panel">
+      <!-- Header sticky -->
+      <header class="detail-header">
+        <span class="detail-header-info" id="detail-header-info">Capítulo</span>
+        <button class="detail-close" id="detail-close" aria-label="Cerrar capítulo">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </header>
+
+      <!-- Foto portada -->
+      <div class="detail-cover" id="detail-cover"></div>
+
+      <!-- Cuerpo -->
+      <div class="detail-body">
+        <p class="detail-month" id="detail-month"></p>
+        <h2 class="detail-title" id="detail-title"></h2>
+        <p class="detail-date" id="detail-date"></p>
+        <div class="detail-divider"></div>
+        <div class="detail-letter" id="detail-letter"></div>
+
+        <!-- Galería -->
+        <h3 class="detail-gallery-title">Momentos</h3>
+        <div class="detail-gallery" id="detail-gallery"></div>
+
+        <!-- Navegación entre capítulos -->
+        <nav class="detail-nav" aria-label="Navegación entre capítulos">
+          <button class="detail-nav-btn detail-nav-btn--prev" id="detail-prev" aria-label="Capítulo anterior">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 12H5M12 5l-7 7 7 7"/>
+            </svg>
+            <div>
+              <span class="detail-nav-label">Anterior</span>
+              <span class="detail-nav-title" id="detail-prev-title"></span>
+            </div>
+          </button>
+          <button class="detail-nav-btn detail-nav-btn--next" id="detail-next" aria-label="Capítulo siguiente">
+            <div>
+              <span class="detail-nav-label">Siguiente</span>
+              <span class="detail-nav-title" id="detail-next-title"></span>
+            </div>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================
+       LIGHTBOX
+       ================================================================ -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Visor de fotografías">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar lightbox">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+    <button class="lightbox-nav-btn lightbox-prev" id="lightbox-prev" aria-label="Foto anterior">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+    <div class="lightbox-img-wrap">
+      <img class="lightbox-img" id="lightbox-img" src="" alt="Fotografía del álbum">
+    </div>
+    <button class="lightbox-nav-btn lightbox-next" id="lightbox-next" aria-label="Foto siguiente">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 18l6-6-6-6"/>
+      </svg>
+    </button>
+    <div class="lightbox-counter" id="lightbox-counter" aria-live="polite"></div>
+  </div>
+
+
+  <!-- ================================================================
+       SCRIPTS
+       ================================================================ -->
+  <!-- Configuración y datos -->
+  <script src="config.js"></script>
+  <!-- Lógica pública -->
+  <script src="app.js"></script>
+
+</body>
+</html>

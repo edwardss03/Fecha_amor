@@ -1,0 +1,13 @@
+{
+  "name": "album-jyv",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Álbum digital Jesús & Viviana — Un recuerdo por mes.",
+  "scripts": {
+    "dev": "vite --open",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
+}

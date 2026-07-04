@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // =====================================================================
 function loadChapters() {
   App.chapters = FALLBACK_CHAPTERS.filter(c => c.estado === 'publicado');
-  App.chapters.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
+  App.chapters.sort((a, b) => parseLocalDate(b.fecha) - parseLocalDate(a.fecha));
 }
 
 // =====================================================================
@@ -83,7 +83,7 @@ function renderChapters() {
   // Agrupar capítulos por año
   const chaptersByYear = {};
   App.chapters.forEach(chapter => {
-    const year = new Date(chapter.fecha).getFullYear();
+    const year = parseLocalDate(chapter.fecha).getFullYear();
     if (!chaptersByYear[year]) {
       chaptersByYear[year] = [];
     }
@@ -436,7 +436,7 @@ function initCounter() {
 }
 
 function updateCounter() {
-  const startDate = new Date(CONFIG?.START_DATE || '2025-07-05');
+  const startDate = parseLocalDate(CONFIG?.START_DATE || '2025-07-05');
   const now = new Date();
 
   const msTotal = now - startDate;
@@ -675,12 +675,21 @@ function initHashRouting() {
  * Mes 1 = 1 mes después del inicio (e.g. agosto 2025 si empezaron en julio 2025)
  */
 function calcMonthNumber(fechaStr) {
-  const start = new Date(CONFIG?.START_DATE || '2025-07-05');
-  const fecha = new Date(fechaStr);
+  const start = parseLocalDate(CONFIG?.START_DATE || '2025-07-05');
+  const fecha = parseLocalDate(fechaStr);
   const diffMonths =
     (fecha.getFullYear() - start.getFullYear()) * 12 +
     (fecha.getMonth() - start.getMonth());
   return Math.max(1, diffMonths);
+}
+
+/**
+ * Parsea una cadena de fecha en formato YYYY-MM-DD en la zona horaria local.
+ */
+function parseLocalDate(dateStr) {
+  if (!dateStr) return new Date();
+  const [year, month, day] = dateStr.split('-').map(Number);
+  return new Date(year, month - 1, day);
 }
 
 /**

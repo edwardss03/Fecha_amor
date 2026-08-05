@@ -65,6 +65,29 @@ CREATE POLICY "Escritura total fotos" ON fotos FOR ALL USING (true);
 
 const FALLBACK_CHAPTERS = [
   {
+    id: '13',
+    fecha: '2026-08-05',
+    titulo: 'jugosita',
+    mensaje: `Amor, ya son 13 meses juntos… y qué bonito se siente poder decir que ya pasamos nuestro primer año. Llegar hasta aquí me hace muy feliz porque no solo seguimos juntos, sino que seguimos eligiéndonos cada día con el mismo cariño de siempre, o mejor dicho, con un amor mucho más grande que el del primer día.
+
+A veces pienso en todo lo que hemos vivido desde que empezamos y me doy cuenta de cuánto hemos cambiado y crecido. Hemos compartido viajes, celebraciones, momentos tranquilos, días difíciles, risas, lágrimas, discusiones y reconciliaciones. Cada experiencia nos ha enseñado algo nuevo y ha hecho que nuestra relación sea más fuerte.
+
+Gracias por estar a mi lado, por apoyarme incluso cuando yo mismo no sé cómo hacerlo, por hacerme sentir querido y por convertirme en una mejor persona. Contigo entendí que el amor no solo está en los momentos perfectos, sino también en la decisión de seguir caminando juntos cuando las cosas se ponen difíciles.
+
+Hoy celebramos 13 meses, el primer mes después de nuestro primer año, y para mí significa el inicio de una nueva etapa. Una etapa en la que quiero seguir creando recuerdos contigo, seguir viajando, seguir riéndome de nuestras tonterías, cumplir sueños juntos y seguir enamorándome de ti todos los días.
+
+Te amo muchísimo, Viviana. Gracias por estos 13 meses tan increíbles. Si el primer año fue así de hermoso, no puedo esperar para descubrir todo lo que nos espera en los que vienen. 💗
+
+Psdt: ¡Eres y siempre serás mi lugar favorito en el mundo!`,
+    portada: 'fotovivi_38.jpg',
+    estado: 'publicado',
+    fotos: [
+      { id: 'f13a', url: 'fotovivi_38.jpg', orden: 0 },
+      { id: 'f13b', url: 'fotovivi_39.jpg', orden: 1 },
+      { id: 'f13c', url: 'fotovivi_40.jpg', orden: 2 },
+    ]
+  },
+  {
     id: '12',
     fecha: '2026-07-05',
     titulo: 'Amor',

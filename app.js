@@ -269,6 +269,7 @@ function openChapter(id) {
   const overlay = document.getElementById('chapter-detail');
   overlay.classList.add('open');
   document.body.style.overflow = 'hidden';
+  document.body.classList.add('chapter-detail-open');
 
   // Actualizar hash de URL
   history.pushState({ chapterId: id }, '', `#chapter-${id}`);
@@ -286,6 +287,7 @@ function closeChapter() {
   const overlay = document.getElementById('chapter-detail');
   overlay.classList.remove('open');
   document.body.style.overflow = '';
+  document.body.classList.remove('chapter-detail-open');
   App.currentChapterId = null;
 
   // Limpiar hash
@@ -345,6 +347,14 @@ function initDetailPanel() {
 
   // Cerrar al hacer clic en el backdrop
   document.getElementById('detail-backdrop').addEventListener('click', closeChapter);
+
+  // Reenviar scroll con la rueda del ratón al panel si el cursor está sobre el backdrop
+  document.getElementById('detail-backdrop').addEventListener('wheel', e => {
+    const panel = document.getElementById('detail-panel');
+    if (panel) {
+      panel.scrollTop += e.deltaY;
+    }
+  }, { passive: true });
 
   // Cerrar con Escape
   document.addEventListener('keydown', e => {

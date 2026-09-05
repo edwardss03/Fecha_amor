@@ -65,6 +65,29 @@ CREATE POLICY "Escritura total fotos" ON fotos FOR ALL USING (true);
 
 const FALLBACK_CHAPTERS = [
   {
+    id: '14',
+    fecha: '2026-09-05',
+    titulo: 'esponjosita',
+    mensaje: `Amor, ya son 14 meses juntos y aunque este mes nos ha tocado vernos menos por el trabajo, creo que también nos ha demostrado algo muy bonito: no importa qué tan ocupados estemos, siempre buscamos la manera de tener un poquito de tiempo para nosotros.
+
+Cada mes te conozco un poquito más, entiendo más tu forma de ser, aprendo de ti y también aprendo de nosotros. Hemos tenido nuestras adversidades, momentos difíciles y días en los que las cosas no salen como queremos, pero siempre intentamos mostrar nuestra mejor versión y recordar que estamos del mismo lado.
+
+Gracias por seguir eligiéndome incluso cuando la vida se pone ocupada. Gracias por hacer espacio para mí en tus días y por demostrarme que, aunque no podamos vernos todo lo que quisiéramos, seguimos estando presentes el uno para el otro.
+
+14 meses después, sigo sintiendo que quiero compartir muchísimas cosas contigo. Quiero seguir creciendo a tu lado, aprender de nuestros errores, superar lo que venga y disfrutar cada etapa que nos toque vivir.
+
+Te amo muchísimo, Viviana. Y aunque este mes nos haya tocado extrañarnos un poquito más, creo que eso solo hizo que cada vez que nos vemos tengamos todavía más ganas de abrazarnos y disfrutar juntos. 💗
+
+Psdt: ¡Verte aunque sea un ratito siempre será mi momento favorito del día!`,
+    portada: 'fotovivi_43.jpg',
+    estado: 'publicado',
+    fotos: [
+      { id: 'f14a', url: 'fotovivi_43.jpg', orden: 0 },
+      { id: 'f14b', url: 'fotovivi_42.jpg', orden: 1 },
+      { id: 'f14c', url: 'fotovivi_41.jpg', orden: 2 },
+    ]
+  },
+  {
     id: '13',
     fecha: '2026-08-05',
     titulo: 'jugosita',

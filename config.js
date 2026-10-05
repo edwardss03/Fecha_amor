@@ -65,6 +65,27 @@ CREATE POLICY "Escritura total fotos" ON fotos FOR ALL USING (true);
 
 const FALLBACK_CHAPTERS = [
   {
+    id: '15',
+    fecha: '2026-10-05',
+    titulo: 'horneadita',
+    mensaje: `Amor ya 15 mesesotes!!! Mil gracias por acompañarme y alentarme tanto en mi trabajo como en la vida. Has estado conmigo en muchas madrugadas, apoyándome y dándome ánimos cuando más lo necesitaba, y de verdad siento que una parte de haber podido certificarme también fue gracias a ti. Tenerte a mi lado en esos momentos hizo que todo el esfuerzo valiera mucho más la pena.
+
+También me quedo con todos los momentos bonitos que hemos compartido este mes: las salidas, las reuniones y todos esos momentos junto a los Barris, el cumpleaños de tu hermana y, sobre todo, nuestras quedadas más tranquilas en casa. Esas veces en las que simplemente estamos juntos, hablamos de cualquier cosa, hacemos nuestras tonterías y terminamos imaginando y planeando todo lo que algún día queremos vivir.
+
+Agradezco muchísimo a Dios por todo lo que nos ha permitido vivir, por las personas que nos rodean, por cada oportunidad y por todas las bendiciones que nos ha dado. Y sobre todo, agradezco tenerte a mi lado y poder compartir contigo cada etapa de mi vida.
+
+Te amo muchísimo, Vivi. Gracias por acompañarme, por creer en mí, por cada madrugada, cada salida, cada risa y cada momento juntos. Por otros muchos meses de gastar la tarjeta, hacer planes, cumplir metas y seguir imaginando todo lo que nos depare el futuro. ❤️
+
+Psdt: ¡Cada meta cumplida y cada sueño son más bonitos porque los vivo contigo!`,
+    portada: 'fotovivi_44.jpg',
+    estado: 'publicado',
+    fotos: [
+      { id: 'f15a', url: 'fotovivi_44.jpg', orden: 0 },
+      { id: 'f15b', url: 'fotovivi_45.jpg', orden: 1 },
+      { id: 'f15c', url: 'fotovivi_46.jpg', orden: 2 },
+    ]
+  },
+  {
     id: '14',
     fecha: '2026-09-05',
     titulo: 'esponjosita',
